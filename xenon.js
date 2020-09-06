@@ -1,5 +1,5 @@
 // xenon / constructor
-var $ = (elOrSel, selOrAll, all)=> {
+var $ = (elOrSel, selOrAll, all) => {
     let startsWithNode = elOrSel.blur; // reversing this is 1 byte
     return (
         // What to look through:
@@ -10,12 +10,7 @@ var $ = (elOrSel, selOrAll, all)=> {
         // Select one or all:
         // If this starts with a selector, the 2nd parameter will have the "All" flag set to True or False
         // Otherwise use the third and final parameter to determine whether it should select all
-
-        // bigger, probably faster
-        (startsWithNode ? all : selOrAll) ? 'querySelectorAll' : 'querySelector'
-        
-        // 8 bytes smaller, probably slower
-        // 'querySelector' + ((startsWithNode ? all : selOrAll) ? 'All' : '')
+        'querySelector' + ((startsWithNode ? all : selOrAll) ? 'All' : '')
     ](
         // What to query:
         // If the selector is the first thing passed, look through the document for it
@@ -28,7 +23,7 @@ $.new = (e, props = {}) => {
     let el = document.createElement(e);
     let o = Object;
     o.assign(el, o.keys(props).reduce((all, cur) => {
-        if (typeof props[cur] === 'object' && !!props[cur])
+        if (typeof props[cur] === 'object')// && !!props[cur])
             o.assign(el[cur], props[cur]);
         else
             all[cur] = props[cur];
@@ -36,14 +31,6 @@ $.new = (e, props = {}) => {
     }, {}));
     return el;
 }
-
-// $.all = (elOrSel, sel) => {
-//     if (typeof elOrSel === 'string') {
-//         return $(elOrSel, true);
-//     } else {
-//         return $(elOrSel, sel, true);
-//     }
-// }
 
 $.all = (...args) => {
     return $(...args, true)
