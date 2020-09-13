@@ -32,8 +32,6 @@ $.new = (
     el = document.createElement(elementName),
     o = Object
 ) => {
-    // let el = document.createElement(e);
-    // let o = Object;
     o.assign(el, o.keys(props).reduce((all, cur) => {
         if (typeof props[cur] === 'object')// && !!props[cur])
             o.assign(el[cur], props[cur]);
