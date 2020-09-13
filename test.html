@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body>
+    
+
+    <div class="test">hello</div>
+    <div class="test2">test 2</div>
+    <div class="test3">test 3</div>
+
+    <script src="xenon.min.js"></script>
+    <script>
+        let test = $('.test');
+        console.log(test);
+        let tests = $.all($('body'), 'div');
+        console.log(tests);
+        let element = $.new('div', {
+            innerHTML: 'testing', 
+            style: {
+                backgroundColor: 'blue',
+                color: 'white'
+            },
+        });
+        document.body.appendChild(element);
+        debugger;
+    </script>
+</body>
+</html>
