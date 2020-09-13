@@ -1,6 +1,12 @@
 // xenon / constructor
-var $ = (elOrSel, selOrAll, all) => {
-    let startsWithNode = elOrSel.blur; // reversing this is 1 byte
+var $ = (
+    elOrSel,
+    selOrAll,
+    all,
+    // Variables for function
+    startsWithNode = elOrSel.blur
+) => {
+    // let startsWithNode = elOrSel.blur; // reversing this is 1 byte
     return (
         // What to look through:
         // if the first parameter is the selector, select from the document
@@ -19,9 +25,15 @@ var $ = (elOrSel, selOrAll, all) => {
     );
 }
 
-$.new = (e, props = {}) => {
-    let el = document.createElement(e);
-    let o = Object;
+$.new = (
+    elementName,
+    props = {},
+    // Variables for function
+    el = document.createElement(elementName),
+    o = Object
+) => {
+    // let el = document.createElement(e);
+    // let o = Object;
     o.assign(el, o.keys(props).reduce((all, cur) => {
         if (typeof props[cur] === 'object')// && !!props[cur])
             o.assign(el[cur], props[cur]);
