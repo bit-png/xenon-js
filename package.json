@@ -1,0 +1,23 @@
+{
+  "name": "xenon",
+  "version": "1.0.6",
+  "description": "An impossibly small jQuery replacement that encourages Javascript standards",
+  "main": "build.js",
+  "scripts": {
+    "start": "node build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bit-png/xenon-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bit-png/xenon-js/issues"
+  },
+  "homepage": "https://github.com/bit-png/xenon-js#readme",
+  "dependencies": {
+    "uglify-es": "^3.3.9"
+  }
+}
