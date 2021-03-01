@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/bit-png/xenon-js#readme",
   "dependencies": {
-    "uglify-es": "^3.3.9"
+    "uglify-js": "^3.12.8"
   }
 }
