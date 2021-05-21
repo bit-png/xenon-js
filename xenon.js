@@ -1,14 +1,10 @@
-// xenon / constructor
+// xenon
 $ = (
     selector,
-    parent = document,
-    all
+    parent = document
 ) => {
-    // let startsWithNode = elOrSel.blur; // reversing this is 1 byte
-    return parent[
-        'querySelector' + (all ? 'All' : '')
-    ](selector);
-}
+    return parent.querySelector(selector);
+};
 
 $.new = (
     elementName,
@@ -24,6 +20,6 @@ $.new = (
     return all;
 }, {}));
 
-$$ = (...args) => {
-    return $(...args, true)
-}
+$$ = (selector, parent = document) => {
+    return Array.from(parent.querySelectorAll(selector))
+} 
