@@ -2,7 +2,9 @@
 
 *An impossibly small jQuery replacement that encourages Javascript standards*
 
-To use xenon in your own project, just download and reference `xe.js`.
+To use xenon in your own project, just download and reference [`xe.js`](./xe.js).
+
+Alternatively, copy and paste it into your code.
 
 ## Developing
 
