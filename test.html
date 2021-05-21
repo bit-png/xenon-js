@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
+    <style>div {margin: 1em; padding: 1em;}</style>
 </head>
 <body>
-    
 
     <div class="test">hello</div>
     <div class="test2">test 2</div>
@@ -16,17 +16,21 @@
     <script>
         let test = $('.test');
         console.log(test);
-        let tests = $.all($('body'), 'div');
+        test.style.fontWeight="bold";
+
+        let tests = $$('div', $('body'));
+        tests.forEach(t => t.style.backgroundColor = "silver");
         console.log(tests);
+
         let element = $.new('div', {
-            innerHTML: 'testing', 
+            className: "example-class",
+            innerHTML: 'Generated element', 
             style: {
                 backgroundColor: 'blue',
                 color: 'white'
             },
         });
-        document.body.appendChild(element);
-        debugger;
+        $('body').appendChild(element);
     </script>
 </body>
 </html>

@@ -1,1 +1,1 @@
-var $=(e,t,c,l=e.blur)=>(l?e:document)["querySelector"+((l?c:t)?"All":"")](l?t:e);$.new=(e,t={},c=document.createElement(e),l=Object)=>(l.assign(c,l.keys(t).reduce((e,n)=>("object"==typeof t[n]?l.assign(c[n],t[n]):e[n]=t[n],e),{})),c),$.all=(...e)=>$(...e,!0)
+$=(e,t=document)=>t.querySelector(e),$.new=(e,c={},r=document.createElement(e),o=Object)=>o.assign(r,o.keys(c).reduce((e,t)=>("object"==typeof c[t]?o.assign(r[t],c[t]):e[t]=c[t],e),{})),$$=(e,t=document)=>Array.from(t.querySelectorAll(e));
